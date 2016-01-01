@@ -1,11 +1,11 @@
-angular.module('shortly.services', [])
+ angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
   // Your code here
   var getAll = function () {
     return $http({
       method: 'GET',
-      url: '/api/links',
+      url: '/api/links'
     }).then(function (resp) {
       console.log(resp.data);
       return resp.data;
@@ -16,9 +16,9 @@ angular.module('shortly.services', [])
     return $http({
       method: 'POST',
       url: '/api/links',
-      data:urlObject
+      data: urlObject
     })
-    .then(function(resp){
+    .then(function (resp) {
       return resp;
     });
 
