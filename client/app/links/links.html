@@ -1,8 +1,28 @@
   <div class='navigation'>
-  <ul>
-    <li><a href='#/links' class='links'>All Links</a></li>
-    <li><a href='#/shorten' class='shorten'>Shorten</a></li>
-  </ul>
-
+    <ul>
+      <li><a href='#/links' class='links'>All Links</a></li>
+      <li><a href='#/shorten' class='shorten'>Shorten</a></li>
+    </ul>
   </div>
-  <div id='container'></div>
+  <div id='container' ng-controller='LinksController' ng-init = data.links>
+   
+      <div class = 'link' ng-repeat = "x in data.links"> 
+       <img src= '/assets/redirect_icon.png' class=' img'/>
+       <div class = 'info'>
+          <div class='count visits'><span class='count visits'>{{x.visits}}</span>Visits</div>
+          <div class='title'>{{x.title}}</div>
+          <div class='original'>{{x.url}}</div>
+       </div>
+      </div>
+  
+ </div>
+
+<!--   <img src='/redirect_icon.png'/>
+  <div class='info'>
+    <div class='visits'><span class='count'>{{visits}}</span>Visits</div>
+    <div class='title'>{{title}}</div>
+    <div class='original'>{{url}}</div>
+    <a href='{{base_url}}/{{code}}'>{{base_url}}/{{code}}</a>
+  </div>
+
+  {"_id":"56885517f014b0d40f55a0eb","code":"be74c","url":"http://funnyjunk.com/","visits":0,"base_url":"http://localhost:3000","title":"Funnyjunk - Funny Pictures, Funny Videos and other Funny stuff","__v":0} -->

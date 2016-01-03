@@ -7,12 +7,12 @@
       method: 'GET',
       url: '/api/links'
     }).then(function (resp) {
-      console.log(resp.data);
       return resp.data;
     });
   };
 
   var addOne = function (urlObject) {
+    console.log(urlObject);
     return $http({
       method: 'POST',
       url: '/api/links',
@@ -21,7 +21,6 @@
     .then(function (resp) {
       return resp;
     });
-
   };
   return {
     getAll: getAll,

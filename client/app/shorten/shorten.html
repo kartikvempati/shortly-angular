@@ -5,9 +5,13 @@
   </ul>
 
   </div>
-  <div id='container'>
-    <form name='submitLink' ng-submit='addLink()'>
-      <input type='text' ng-model='link.'>
-      <button>Submit!</button>
+  <div id='container' ng-controller = 'ShortenController'>
+    <form name='submitLink' ng-submit='addLink()' ng-model='link.url'>
+
+      <input type='url' ng-model = link['url']>
+      <button>Shorten!</button>
     </form>
+    <div>
+      <div ng-show = '!!submitLink.$error.url'> Invalid URL!</div>
+    </div>
   </div>
